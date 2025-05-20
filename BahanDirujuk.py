@@ -60,7 +60,7 @@ try:
             st.subheader("📊 Perbandingan Jumlah Buku Fiksyen")
 
             # Bar Chart
-            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            st.subheader("**Jumlah Kategori Buku Fiksyen (Jumlah Keseluruhan)**")
             total = filtered[jenis_buku1].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
@@ -78,7 +78,7 @@ try:
             
 
             # Bar Chart
-            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            st.subheader("**Jumlah Kategori Buku Ilmiah (Jumlah Keseluruhan)**")
             total = filtered[jenis_buku2].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
@@ -96,7 +96,7 @@ try:
 
             
             # Bar Chart
-            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            st.subheader("**Jumlah Kategori Buku Majalah (Jumlah Keseluruhan)**")
             total = filtered[jenis_buku3].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
@@ -114,7 +114,7 @@ try:
 
 
             # Bar Chart
-            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            st.subheader("**Jumlah Kategori DVD Fiksyen (Jumlah Keseluruhan)**")
             total = filtered[jenis_buku4].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
@@ -132,7 +132,7 @@ try:
 
 
             # Bar Chart
-            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            st.subheader("**Jumlah Kategori DVD Ilmiah (Jumlah Keseluruhan)**")
             total = filtered[jenis_buku5].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
