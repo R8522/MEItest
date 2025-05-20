@@ -11,7 +11,7 @@ st.title("📚 Dashboard Analisis Bahan Dirujuk")
 DATA_PATH = "/content/report_bahandirujuk.csv"
 
 try:
-    data = pd.read_csv(report_bahandirujuk.csv)
+    data = pd.read_csv("report_bahandirujuk.csv")
 
     # Optional cleanup
     data = data.drop(columns=['id_record', 'aduan_id'], errors='ignore')
