@@ -58,28 +58,95 @@ try:
 
         with tab2:
             st.subheader("📊 Perbandingan Jumlah Buku Fiksyen")
-        
-            jenis_buku_list = ['jenis_buku1', 'jenis_buku2', 'jenis_buku3', 'jenis_buku4', 'jenis_buku5']
-        
-            for i, jenis in enumerate(jenis_buku_list, start=1):
-                st.markdown(f"## Jenis Buku {i}")
-        
-                # --- Bar Chart ---
-                st.markdown("**Jumlah Setiap Kategori (Bar Chart)**")
-                total = filtered[jenis].value_counts()  # or use .groupby() if it's categorical
-                fig_bar, ax_bar = plt.subplots()
-                sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax_bar)
-                ax_bar.set_ylabel("Jumlah Buku")
-                ax_bar.set_xlabel("Kategori")
-                st.pyplot(fig_bar)
-        
-                # --- Box Plot ---
-                st.markdown("**Taburan Nilai (Boxplot)**")
-                fig_box, ax_box = plt.subplots()
-                sns.boxplot(y=filtered[jenis], palette='Set3', ax=ax_box)
-                ax_box.set_ylabel("Jumlah Buku")
-                st.pyplot(fig_box)
 
+            # Bar Chart
+            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            total = filtered[jenis_buku1].sum()
+            fig, ax = plt.subplots()
+            sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
+            ax.set_ylabel("Jumlah Buku")
+            ax.set_xlabel("Kategori")
+            st.pyplot(fig)
+
+            # Box Plot
+            st.markdown("**Taburan Nilai (Boxplot)**")
+            fig2, ax2 = plt.subplots()
+            sns.boxplot(data=filtered[jenis_buku1], palette='Set3', ax=ax2)
+            ax2.set_ylabel("Jumlah Buku")
+            st.pyplot(fig2)
+
+            
+
+            # Bar Chart
+            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            total = filtered[jenis_buku2].sum()
+            fig, ax = plt.subplots()
+            sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
+            ax.set_ylabel("Jumlah Buku")
+            ax.set_xlabel("Kategori")
+            st.pyplot(fig)
+
+            # Box Plot
+            st.markdown("**Taburan Nilai (Boxplot)**")
+            fig2, ax2 = plt.subplots()
+            sns.boxplot(data=filtered[jenis_buku2], palette='Set3', ax=ax2)
+            ax2.set_ylabel("Jumlah Buku")
+            st.pyplot(fig2)
+
+
+            
+            # Bar Chart
+            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            total = filtered[jenis_buku3].sum()
+            fig, ax = plt.subplots()
+            sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
+            ax.set_ylabel("Jumlah Buku")
+            ax.set_xlabel("Kategori")
+            st.pyplot(fig)
+
+            # Box Plot
+            st.markdown("**Taburan Nilai (Boxplot)**")
+            fig2, ax2 = plt.subplots()
+            sns.boxplot(data=filtered[jenis_buku3], palette='Set3', ax=ax2)
+            ax2.set_ylabel("Jumlah Buku")
+            st.pyplot(fig2)
+
+
+
+            # Bar Chart
+            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            total = filtered[jenis_buku4].sum()
+            fig, ax = plt.subplots()
+            sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
+            ax.set_ylabel("Jumlah Buku")
+            ax.set_xlabel("Kategori")
+            st.pyplot(fig)
+
+            # Box Plot
+            st.markdown("**Taburan Nilai (Boxplot)**")
+            fig2, ax2 = plt.subplots()
+            sns.boxplot(data=filtered[jenis_buku4], palette='Set3', ax=ax2)
+            ax2.set_ylabel("Jumlah Buku")
+            st.pyplot(fig2)
+
+
+
+            # Bar Chart
+            st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
+            total = filtered[jenis_buku5].sum()
+            fig, ax = plt.subplots()
+            sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
+            ax.set_ylabel("Jumlah Buku")
+            ax.set_xlabel("Kategori")
+            st.pyplot(fig)
+
+            # Box Plot
+            st.markdown("**Taburan Nilai (Boxplot)**")
+            fig2, ax2 = plt.subplots()
+            sns.boxplot(data=filtered[jenis_buku5], palette='Set3', ax=ax2)
+            ax2.set_ylabel("Jumlah Buku")
+            st.pyplot(fig2)
+            
         with tab3:
             st.subheader("🧮 Data Mentah")
             st.dataframe(filtered.reset_index(drop=True))
