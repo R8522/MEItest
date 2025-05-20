@@ -24,7 +24,15 @@ try:
         "Pilih Perkhidmatan", perkhid_list, default=perkhid_list[:1]
     )
 
-    jenis_buku = ['K_B_fik', 'R_B_fik', 'D_B_fik']
+    jenis_buku1 = ['K_B_fik', 'R_B_fik', 'D_B_fik']
+
+    jenis_buku2 = ['K_B_ilm', 'R_B_ilm', 'D_B_ilm']
+
+    jenis_buku3 = ['K_majalah', 'R_majalah', 'D_majalah']
+
+    jenis_buku4 = ['K_dvd_fik', 'R_dvd_fik', 'D_dvd_fik']
+
+    jenis_buku5 = ['K_dvd_ilm', 'R_dvd_ilm', 'D_dvd_ilm']
 
     # Filter data
     filtered = data[data['perkhidmatan'].isin(selected_perkhid)]
@@ -38,14 +46,22 @@ try:
 
         with tab1:
             st.subheader(f"📌 Statistik Ringkasan - {', '.join(selected_perkhid)}")
-            st.write(filtered[jenis_buku].describe())
+            st.write(filtered[jenis_buku1].describe())
+
+            st.write(filtered[jenis_buku2].describe())
+
+            st.write(filtered[jenis_buku3].describe())
+
+            st.write(filtered[jenis_buku4].describe())
+
+            st.write(filtered[jenis_buku5].describe())
 
         with tab2:
             st.subheader("📊 Perbandingan Jumlah Buku Fiksyen")
 
             # Bar Chart
             st.markdown("**Jumlah Setiap Kategori (Jumlah Keseluruhan)**")
-            total = filtered[jenis_buku].sum()
+            total = filtered[jenis_buku1].sum()
             fig, ax = plt.subplots()
             sns.barplot(x=total.index, y=total.values, palette='Set2', ax=ax)
             ax.set_ylabel("Jumlah Buku")
@@ -55,7 +71,7 @@ try:
             # Box Plot
             st.markdown("**Taburan Nilai (Boxplot)**")
             fig2, ax2 = plt.subplots()
-            sns.boxplot(data=filtered[jenis_buku], palette='Set3', ax=ax2)
+            sns.boxplot(data=filtered[jenis_buku1], palette='Set3', ax=ax2)
             ax2.set_ylabel("Jumlah Buku")
             st.pyplot(fig2)
 
