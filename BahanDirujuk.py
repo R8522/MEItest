@@ -18,7 +18,7 @@ try:
     data.fillna(0, inplace=True)
 
     # Sidebar filters
-    st.sidebar.header("🎯 Penapis")
+    st.sidebar.header("🎯 Filter")
     perkhid_list = sorted(data['perkhidmatan'].dropna().unique())
     selected_perkhid = st.sidebar.multiselect(
         "Pilih Perkhidmatan", perkhid_list, default=perkhid_list[:1]
