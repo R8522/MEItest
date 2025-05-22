@@ -151,6 +151,9 @@ try:
             st.subheader("🧮 Data Mentah")
             st.dataframe(filtered.reset_index(drop=True))
 
+            st.markdown("### 📊 Statistik Deskriptif (Keseluruhan Data)")
+            st.dataframe(data.describe())
+
 except FileNotFoundError:
     st.error(f"Fail CSV tidak dijumpai di lokasi: {DATA_PATH}")
     st.info("Simpan fail anda sebagai `report_bahandirujuk.csv` dalam folder yang sama.")
